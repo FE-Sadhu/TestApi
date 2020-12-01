@@ -1,0 +1,33 @@
+{
+  "name": "ck_apitest",
+  "version": "1.0.0",
+  "description": "CoolKit API Test",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx webpack --config webpack.config.js",
+    "test:before": "mocha ./test/beforeLogin.spec.js -b",
+    "test:after": "mocha ./test/loggedIn.spec.js -b",
+    "test:doc1": "mocha ./test/beforeLogin.spec.js --reporter mochawesome --reporter-options reportDir=docs/",
+    "test:doc2": "mocha ./test/loggedIn.spec.js --reporter mochawesome --reporter-options reportDir=docs/"
+  },
+  "author": "Sadhu",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "chai": "^4.2.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "express": "^4.17.1",
+    "html-webpack-plugin": "^4.5.0",
+    "mocha": "^8.2.1",
+    "mochawesome": "^6.2.1",
+    "webpack": "^5.6.0",
+    "webpack-cli": "^4.2.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "crypto-js": "^4.0.0",
+    "node-fetch": "^2.6.1",
+    "ws": "^7.4.0"
+  }
+}
