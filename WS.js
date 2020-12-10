@@ -55,8 +55,6 @@ class WS {
           this.ws.send('ping'); // 客户端发送ping
       }
     }, this.interval)
-
-
   }
   /**
    * 

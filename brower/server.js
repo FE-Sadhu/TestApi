@@ -3,7 +3,7 @@
  */
 const express = require('express')
 const bodyParser = require('body-parser')
-const fetch = require('node-fetch');
+const fetch = require('node-fetch')
 
 const app = express()
 const router = express.Router()
@@ -61,7 +61,6 @@ router.post('/user/close-account', bodyParser.json(), (req, res) => {
     .catch(e => console.log('出错 -> ', e))
 })
 
-
 router.post('/user/verification-code', bodyParser.json(), (req, res) => {
   fetch(CN + '/v2/user/verification-code', {
     method: req.method,
@@ -73,6 +72,7 @@ router.post('/user/verification-code', bodyParser.json(), (req, res) => {
     .then(data => {console.log(data); res.json(data) })
     .catch(e => console.log('出错 -> ', e))
 })
+
 app.use('/v2', router)
 
 app.use(express.static('../dist'))
